@@ -1,0 +1,12 @@
+{
+  "name": "axaipay",
+  "version": "0.1.0",
+  "description": "Unofficial skill for integrating the Axaipay eComPay payment gateway: hosted payment page, HMAC-SHA512 signatures, callbacks, and the inquiry API (API v1.19 r1).",
+  "author": {
+    "name": "kenspc",
+    "url": "https://github.com/kenspc"
+  },
+  "homepage": "https://github.com/kenspc/axaipay-skill",
+  "repository": "https://github.com/kenspc/axaipay-skill",
+  "keywords": ["axaipay", "payment-gateway", "ecompay", "malaysia", "fpx"]
+}

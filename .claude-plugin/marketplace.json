@@ -1,0 +1,15 @@
+{
+  "name": "axaipay-skill",
+  "description": "Unofficial Axaipay eComPay integration skill for AI coding agents, based on one real integration.",
+  "owner": {
+    "name": "kenspc",
+    "url": "https://github.com/kenspc"
+  },
+  "plugins": [
+    {
+      "name": "axaipay",
+      "source": "./plugins/axaipay",
+      "description": "Integrate Axaipay eComPay correctly: signatures, environments, callbacks, and the inquiry API."
+    }
+  ]
+}
