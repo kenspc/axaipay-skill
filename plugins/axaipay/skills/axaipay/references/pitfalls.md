@@ -116,7 +116,20 @@ apply to eComPay API v1.19 r1 and carry the labels defined in
   "Unknown") and let the site start. Fail the payment action itself, not the
   process. Integration practice.
 
-## 13. PY022 on a retry
+## 13. Callback URL sits behind a redirect
+
+- **Risk:** your site redirects one host to another, for example `www.` to the
+  bare domain with HTTP 301, and the redirect or backend URL uses the host that
+  redirects. A 301 or 302 answer to a POST is usually followed with a GET and no
+  body, so the callback fields never reach your handler. Whether Axaipay's
+  server follows redirects at all is not documented.
+- **Prevention:** register and send callback URLs on the final host, the one
+  that answers 200 without redirecting. Integration practice; we set it up this
+  way from the start rather than after a lost callback.
+- **How to verify:** `curl -s -o /dev/null -w '%{http_code}\n' -X POST <backend URL>`
+  must not print 301, 302, 307 or 308.
+
+## 14. PY022 on a retry
 
 - **Cause:** the same `mchtTrxnId` was sent twice. Generate a new one for every
   payment attempt and link attempts to your order. From the vendor document

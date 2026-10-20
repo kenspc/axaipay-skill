@@ -138,7 +138,8 @@ redirect page matched it, and inquiry agrees.
 - Production config uses production hosts and production keys, as one set.
 - The startup log reads "Production".
 - Redirect and backend URLs registered with Axaipay (or sent per request) point
-  at the production site over HTTPS.
+  at the production site over HTTPS, on the final host: a POST to them must not
+  be answered with a redirect (pitfalls 13).
 - One small real payment, then inquiry on it.
 
 ## When something fails
